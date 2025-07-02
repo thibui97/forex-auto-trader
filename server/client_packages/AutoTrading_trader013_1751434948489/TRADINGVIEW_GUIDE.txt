@@ -1,0 +1,102 @@
+===========================================
+📈 TRADINGVIEW WEBHOOK SETUP GUIDE
+===========================================
+
+🔗 YOUR WEBHOOK URL:
+http://localhost:3000/api/webhook/25/85b7791364cc4ea0bff41af5d2a04ce3c9146dc0b20c2c682002e11ba56b81d7
+
+📋 STEP-BY-STEP SETUP:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. OPEN TRADINGVIEW
+   - Go to tradingview.com
+   - Login to your account
+   - Open your chart/strategy
+
+2. CREATE ALERT
+   - Click "⏰" alert icon (top toolbar)
+   - OR right-click chart → "Add Alert"
+
+3. CONFIGURE ALERT
+   - Condition: Choose your indicator/strategy
+   - Options: Set as needed
+   - Actions: Check "Webhook URL"
+
+4. WEBHOOK SETTINGS
+   - Webhook URL: http://localhost:3000/api/webhook/25/85b7791364cc4ea0bff41af5d2a04ce3c9146dc0b20c2c682002e11ba56b81d7
+   - Message: Use format below
+
+5. MESSAGE FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FOR BUY SIGNAL:
+{
+  "symbol": "{{ticker}}",
+  "action": "BUY",
+  "volume": 0.01,
+  "price": {{close}},
+  "stopLoss": {{low}},
+  "takeProfit": {{high}}
+}
+
+FOR SELL SIGNAL:
+{
+  "symbol": "{{ticker}}",
+  "action": "SELL", 
+  "volume": 0.01,
+  "price": {{close}},
+  "stopLoss": {{high}},
+  "takeProfit": {{low}}
+}
+
+6. ADVANCED SETTINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Frequency: "Once Per Bar Close" (recommended)
+- Expiration: Set appropriate time
+- Sound: Enable for notifications
+
+7. TEST YOUR WEBHOOK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Create a simple alert first
+- Check MT5 Expert tab for messages
+- Verify trades appear in MT5
+
+8. SUPPORTED SYMBOLS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ EURUSD, GBPUSD, USDJPY, USDCHF
+✅ AUDUSD, NZDUSD, USDCAD
+✅ XAUUSD (Gold), XAGUSD (Silver)
+✅ US30, SPX500, NAS100
+✅ Most major forex pairs
+
+9. BEST PRACTICES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📌 Start with demo account
+📌 Use small position sizes (0.01 lots)
+📌 Test during active market hours
+📌 Monitor first few trades manually
+📌 Keep TradingView and MT5 open
+
+10. TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ Alert not triggering?
+   → Check condition settings
+   → Verify webhook URL is correct
+
+❌ Webhook sending but no trades?
+   → Check MT5 Expert Advisor is running
+   → Verify auto trading is enabled
+   → Check account balance
+
+❌ Wrong symbol error?
+   → Ensure symbol exists in MT5
+   → Check symbol format (EURUSD vs EUR/USD)
+
+🎯 YOUR SYSTEM IS READY!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Client: trader013
+User ID: 25
+License: ACTIVE
+Generated: 7/2/2025, 12:42:28 PM
+
+Happy Trading! 🚀

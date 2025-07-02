@@ -1,0 +1,27 @@
+
+⚠️ EXNESS TOKEN SYSTEM ALERT ⚠️
+Time: 2025-07-02T08:30:01.231Z
+
+ALL EXNESS JWT TOKENS HAVE EXPIRED OR ARE INVALID
+
+Immediate Action Required:
+1. Login to EXNESS Partner portal: https://my.exness.com
+2. Navigate to API section
+3. Generate new JWT tokens
+4. Update tokens in .env file:
+   - EXNESS_JWT_TOKEN=your_new_primary_token
+   - EXNESS_JWT_TOKEN_BACKUP_1=your_backup_token_1
+   - EXNESS_JWT_TOKEN_BACKUP_2=your_backup_token_2
+   - EXNESS_JWT_TOKEN_BACKUP_3=your_backup_token_3
+
+5. Restart application: pm2 restart forex-auto-trader
+
+System Impact:
+- IB activity monitoring may be affected
+- Client trading activity verification disabled
+- Auto-trading system may not function properly
+
+Current tokens expire every 6 hours.
+Please update as soon as possible.
+
+System Status: 7/2/2025, 3:30:01 PM

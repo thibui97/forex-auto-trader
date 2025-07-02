@@ -1,0 +1,34 @@
+===========================================
+🎯 AUTO TRADING CLIENT PACKAGE
+===========================================
+
+👤 CLIENT INFORMATION:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Username: trader013
+• User ID: 25
+• Broker: PUPrime
+• Account: 159486001
+• Email: trader013@example.com
+• Phone/Zalo: 0901234567
+
+🔑 AUTHENTICATION:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• License Key: 85b7791364cc4ea0bff41af5d2a04ce3c9146dc0b20c2c682002e11ba56b81d7
+• Status: ACTIVE
+• Created: 7/2/2025, 12:42:28 PM
+
+🔗 WEBHOOK URL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+http://localhost:3000/api/webhook/25/85b7791364cc4ea0bff41af5d2a04ce3c9146dc0b20c2c682002e11ba56b81d7
+
+📁 PACKAGE CONTENTS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ CLIENT_INFO.txt (This file)
+✅ Autotrader.mq5 (Expert Advisor - Pre-configured)
+✅ SETUP_INSTRUCTIONS.txt (Step-by-step guide)
+✅ TRADINGVIEW_GUIDE.txt (Webhook setup guide)
+
+🎯 READY TO USE!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Package generated: 7/2/2025, 12:42:28 PM
+All files are pre-configured with your settings.

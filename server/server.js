@@ -17,6 +17,9 @@ const PORT = process.env.PORT || 3000;
 // Import cron jobs AFTER app is created
 require('./jobs/ibMonitor');
 
+// Import token refresh service
+require('./services/tokenRefreshService');
+
 // Middleware
 //app.use(helmet());
 app.use(cors({

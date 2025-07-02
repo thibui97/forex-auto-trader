@@ -377,4 +377,47 @@ router.get('/health', (req, res) => {
     });
 });
 
+// Token Management Routes
+const tokenService = require('../services/tokenRefreshService');
+
+// Get token status
+router.get('/token-status', authenticateAdmin, async (req, res) => {
+    try {
+        const status = await tokenService.getTokenStatus();
+        res.json({ success: true, status });
+    } catch (error) {
+        logger.error('Get token status error:', error);
+        res.status(500).json({ error: 'Failed to get token status' });
+    }
+});
+
+// Manual token refresh
+router.post('/refresh-tokens', authenticateAdmin, async (req, res) => {
+    try {
+        const { tokens } = req.body; // Array of new tokens
+        const success = await tokenService.manualRefresh(tokens);
+        
+        if (success) {
+            res.json({ success: true, message: 'Tokens refreshed successfully' });
+        } else {
+            res.status(500).json({ error: 'Token refresh failed' });
+        }
+    } catch (error) {
+        logger.error('Manual token refresh error:', error);
+        res.status(500).json({ error: 'Token refresh failed' });
+    }
+});
+
+// Force token validation
+router.post('/validate-token', authenticateAdmin, async (req, res) => {
+    try {
+        await tokenService.validateCurrentToken();
+        const status = await tokenService.getTokenStatus();
+        res.json({ success: true, message: 'Token validation completed', status });
+    } catch (error) {
+        logger.error('Token validation error:', error);
+        res.status(500).json({ error: 'Token validation failed' });
+    }
+});
+
 module.exports = router;

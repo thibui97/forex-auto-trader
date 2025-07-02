@@ -10,6 +10,7 @@ const logger = require('../utils/logger');
 class ClientPackageGenerator {
     constructor() {
         this.serverURL = process.env.SERVER_URL || 'http://localhost:3000';
+        this.publicURL = process.env.PUBLIC_URL || this.serverURL; // For ngrok/public access   
         this.outputPath = path.join(__dirname, '../client_packages');
         this.templatesPath = path.join(__dirname, '../templates');
         
@@ -55,7 +56,7 @@ class ClientPackageGenerator {
             const packageData = {
                 packageName,
                 downloadURL: `/api/admin/download-package/${packageName}`,
-                webhookURL: `${this.serverURL}/api/webhook/${userId}/${userInfo.licenseKey}`,
+                webhookURL: `${this.publicURL}/api/webhook/${userId}/${userInfo.licenseKey}`,
                 clientInfo: {
                     userId: userInfo.id,
                     username: userInfo.username,
