@@ -126,14 +126,14 @@ app.listen(PORT, () => {
     logger.info(`Server running on port ${PORT}`);
     logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
     console.log(`
-🚀 Forex Auto Trading Server Started!
-📍 Server: http://localhost:${PORT}
-📍 Health: http://localhost:${PORT}/health
-📍 Admin Dashboard: http://localhost:${PORT}/admin/fixed.html
-📍 Environment: ${process.env.NODE_ENV || 'development'}
-📍 IB Management: http://localhost:${PORT}/api/ib/stats
-📍 Package Generation: http://localhost:${PORT}/api/admin/generate-package/:userId
-    `);
+        🚀 Forex Auto Trading Server Started!
+        📍 Server: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}
+        📍 Health: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}/health
+        📍 Admin Dashboard: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}/admin/fixed.html
+        📍 Environment: ${process.env.NODE_ENV || 'development'}
+        📍 IB Management: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}/api/ib/stats
+        📍 Package Generation: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}/api/admin/generate-package/:userId
+            `);
 });
 
 module.exports = app;
