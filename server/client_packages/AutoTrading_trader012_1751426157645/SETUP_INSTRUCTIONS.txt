@@ -1,0 +1,74 @@
+===========================================
+📋 SETUP INSTRUCTIONS
+===========================================
+
+🚀 QUICK START GUIDE for trader012
+
+STEP 1: INSTALL MT5 EXPERT ADVISOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Open MetaTrader 5
+2. Press F4 or go to Tools → MetaQuotes Language Editor
+3. Click File → Open → Select "Autotrader.mq5" from this package
+4. Click Compile (F7) - should show "0 errors, 0 warnings"
+5. Go back to MT5 → Navigator → Expert Advisors
+6. Drag "Autotrader" to your chart
+7. Check "Allow algo trading" and "Allow WebRequest"
+8. Click OK
+
+STEP 2: VERIFY EA SETTINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ CLIENT_NAME: trader012
+✅ USER_ID: 24
+✅ LICENSE_KEY: c48f3ec4d887e80111b8...
+✅ BROKER_NAME: PUPrime
+✅ ACCOUNT_NUMBER: 14825056
+
+STEP 3: SETUP TRADINGVIEW ALERTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Open TradingView
+2. Create your strategy/indicator
+3. Click "Create Alert"
+4. In "Webhook URL" field, paste:
+   http://localhost:3000/api/webhook/24/c48f3ec4d887e80111b8e73e74bf1572b7340cbd62d3c607d433f684e9afadc2
+5. In message field, use format:
+   {
+     "symbol": "{{ticker}}",
+     "action": "{{strategy.order.action}}",
+     "volume": 0.01,
+     "price": {{close}}
+   }
+
+STEP 4: TEST THE SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Send a test alert from TradingView
+2. Check MT5 Expert tab for messages
+3. Check Journal tab for trade execution
+4. Start with small position sizes
+
+STEP 5: TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ EA not working? Check:
+   - Auto trading is enabled (Ctrl+E)
+   - WebRequest is allowed in Tools → Options → Expert Advisors
+   - License key is correct
+   - Internet connection is stable
+
+❌ No trades executing? Check:
+   - Account balance is sufficient  
+   - Symbol is available for trading
+   - Market is open
+   - Webhook URL is correct
+
+📞 SUPPORT CONTACT:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+If you need help, contact us with:
+• Your User ID: 24
+• Your Username: trader012
+• Error message (if any)
+
+🎯 READY TO TRADE!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Your system is pre-configured and ready to use.
+Start with small positions to test everything works.
+
+Generated: 7/2/2025, 10:15:57 AM
