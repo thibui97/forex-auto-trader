@@ -122,18 +122,22 @@ process.on('SIGINT', () => {
     process.exit(0);
 });
 
+
+const displayURL = process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`;
+
 app.listen(PORT, () => {
     logger.info(`Server running on port ${PORT}`);
     logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
     console.log(`
-        🚀 Forex Auto Trading Server Started!
-        📍 Server: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}
-        📍 Health: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}/health
-        📍 Admin Dashboard: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}/admin/fixed.html
-        📍 Environment: ${process.env.NODE_ENV || 'development'}
-        📍 IB Management: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}/api/ib/stats
-        📍 Package Generation: ${process.env.PUBLIC_URL || process.env.SERVER_URL || `http://localhost:${PORT}`}/api/admin/generate-package/:userId
-            `);
+🚀 Forex Auto Trading Server Started!
+📍 Server: ${displayURL}
+📍 Health: ${displayURL}/health
+📍 Admin Dashboard: ${displayURL}/admin/fixed.html
+📍 Environment: ${process.env.NODE_ENV || 'development'}
+📍 IB Management: ${displayURL}/api/ib/stats
+📍 Package Generation: ${displayURL}/api/admin/generate-package/:userId
+    `);
 });
+
 
 module.exports = app;
